@@ -10,8 +10,8 @@ It may require that the development package for CUPS is installed, e.g.
 
 ### PyPI
 
-The package is hosted on [PyPI](). It depends on `click` and `pycups`.
-
+The package is hosted on [PyPI](https://pypi.org/project/cups_printers/).
+It depends on `click` and `pycups`.
 
 ```bash
 $ pip3 install cups_printer
