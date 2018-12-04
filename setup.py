@@ -14,8 +14,8 @@ if sys.argv[-1] == 'publish':
     sys.exit()
 
 setup(
-    name='cups_printer',
-    version='0.1.0',
+    name='cups_printers',
+    version='0.1.1',
     description='Get the printers from a running CUPS instance.',
     long_description=long_description,
     url='https://github.com/audiusGmbH/cups_printers',
