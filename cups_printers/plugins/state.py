@@ -9,8 +9,12 @@ from cups_printers.cli import pass_context
 @pass_context
 def cli(ctx):
     """Print the current state of all printers."""
+    printers = ctx.conn.getPrinters()
 
-    gethost()
+    for printer in printers:
+        click.echo("%s: %s" % (
+            printers[printer]['printer-info'],
+            printers[printer]['printer-state']))
 
 
 def do_indent(indent):
@@ -18,7 +22,7 @@ def do_indent(indent):
 
 
 def getippqueue(dev, queue, depth):
-    name = dev.rfind ('/')
+    name = dev.rfind('/')
     name = dev[name + 1:]
     dev = dev[6:]
     e = dev.find(':')
@@ -57,14 +61,15 @@ def getqueue(name, queue, host, depth, printers, classes):
             depth += 1
             indent = do_indent(depth)
             for member in members:
-                getqueue(member, printers[member], host,
-                      depth, printers, classes)
+                getqueue(
+                    member, printers[member], host, depth, printers, classes)
     else:
         print("%sName:\t%s[@%s]" % (indent, name, host))
         dev = queue['device-uri']
         info = queue['printer-info']
         print("%sURI:\t%s" % (indent, dev))
         print("%sInfo:\t%s" % (indent, info))
+        print("%sState:\t%s" % (indent, info))
         if dev.startswith('ipp:'):
             getippqueue(dev, name, depth)
 
@@ -82,4 +87,4 @@ def gethost(host=None, depth=0):
     classes = c.getClasses()
     indent = do_indent(depth)
     for name, queue in printers.items():
-        getqueue (name, queue, host, depth, printers, classes)
+        getqueue(name, queue, host, depth, printers, classes)

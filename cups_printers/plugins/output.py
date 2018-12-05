@@ -30,7 +30,7 @@ def json(ctx):
     """Output as JSON formatted string."""
     output = get_printer(ctx)
     click.echo(_json.dump(
-            output, sys.stdout, sort_keys=True, indent=2, ensure_ascii=False))
+        output, sys.stdout, sort_keys=True, indent=2, ensure_ascii=False))
 
 
 @cli.command()
