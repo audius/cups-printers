@@ -39,7 +39,7 @@ def file(ctx):
     """Write output to file as JSON formatted string."""
     output = get_printer(ctx)
 
-    with open('printersdef.json', 'w') as outfile:
+    with open('printers.json', 'w') as outfile:
         _json.dump(
             output, outfile, sort_keys=True, indent=2, ensure_ascii=False)
 
@@ -55,16 +55,6 @@ def get_printer(ctx):
 
     for printer in printers:
         attrs = ctx.conn.getPrinterAttributes(printer)
-        # printer = {
-        #     'name': printer,
-        #     'uri': printers[printer]['device-uri'],
-        #     'location': printers[printer]['printer-location'],
-        #     'info': printers[printer]['printer-info'],
-        #     'state': printers[printer]['printer-state'],
-        #     'printer-uri': printers[printer]['printer-uri-supported'],
-        #     'shared': printers[printer]['printer-is-shared'],
-        #
-        # }
         list_printers.append(attrs)
 
     output['printers'] = list_printers
