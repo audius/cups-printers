@@ -54,6 +54,7 @@ def get_printer(ctx):
     printers = ctx.conn.getPrinters()
 
     for printer in printers:
+        attrs = ctx.conn.getPrinterAttributes(printer)
         # printer = {
         #     'name': printer,
         #     'uri': printers[printer]['device-uri'],
@@ -64,7 +65,7 @@ def get_printer(ctx):
         #     'shared': printers[printer]['printer-is-shared'],
         #
         # }
-        list_printers.append(printers[printer])
+        list_printers.append(attrs)
 
     output['printers'] = list_printers
 
