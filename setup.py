@@ -18,6 +18,7 @@ setup(
     version='0.2.0',
     description='Get the printers from a running CUPS instance.',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/audiusGmbH/cups_printers',
     download_url='https://github.com/audiusGmbH/cups_printers/releases',
     author='Fabian Affolter',
