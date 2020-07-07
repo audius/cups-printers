@@ -1,6 +1,6 @@
 # cups_printer
 
-Retrieve all printer from a CUPS server. It's a simple command-line tool that
+Retrieve all printers from a CUPS server. It's a simple command-line tool that
 allows one to output the existing printers or write them to a file.
 
 ## Installation
