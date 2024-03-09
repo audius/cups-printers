@@ -25,17 +25,6 @@ $ source bin/activate
 $ python3 setup.py
 ```
 
-### Development setup
-
-For development, clone the Git repository and create a Python virtual 
-environment.
-
-```bash
-$ python3 -m venv 
-$ source bin/activate
-$ python3 setup.py develop
-```
-
 ## Usage
 
 The default CUPS instance which is used is `localhost`.
