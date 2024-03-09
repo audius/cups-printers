@@ -21,7 +21,7 @@ setup(
     author_email='fabian.affolter@audius.de',
     license='MIT',
     install_requires=['pycups', 'click'],
-    python_requires='>=3.8'
+    python_requires='>=3.8',
     include_package_data=True,
     packages=find_packages(),
     zip_safe=True,
