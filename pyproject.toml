@@ -6,8 +6,8 @@ authors = ["Fabian Affolter <fabian.affolter@audius.de>"]
 readme = "README.md"
 license="MIT"
 keywords = ["printers", "cups"]
-homepage = "https://github.com/audiusGmbH/audiness"
-repository = "https://github.com/audiusGmbH/audiness"
+homepage = "https://github.com/audiusGmbH/cups-printers"
+repository = "https://github.com/audiusGmbH/cups-printers"
 #classifiers=[
 #    "Development Status :: 3 - Alpha"
 #    "Environment :: Console"
