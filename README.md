@@ -17,6 +17,16 @@ It depends on `typer` and `pycups`.
 $ pip install cups_printer
 ```
 
+### Nixpkgs
+
+For Nix or NixOS users is a [package](https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=cups-printers)
+available in Nixpkgs. Keep in mind that the lastest releases might only
+be present in the ``unstable`` channel.
+
+```bash
+$ nix-env -iA nixos.cups-printers
+```
+
 ### Manual setup
 
 ```bash
