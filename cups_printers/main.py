@@ -1,9 +1,10 @@
 """Main part of cups-pinters."""
+import cups
 import typer
 from typing_extensions import Annotated
 from validators import url
-import cups
-from cups_printers.commands import output, state, queue
+
+from cups_printers.commands import output, queue, state
 from cups_printers.constants import DEFAULT_SERVER, DEFAULT_TIMEOUT
 
 app = typer.Typer()
@@ -41,7 +42,6 @@ def main(
         ),
     ] = DEFAULT_TIMEOUT,
 ):
-
     try:
         cups.setServer(server)
         ctx.obj = {"connection": cups.Connection()}

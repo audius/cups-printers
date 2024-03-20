@@ -14,7 +14,9 @@ def raw(ctx: typer.Context):
     printers = connection.getPrinters()
 
     for printer in printers:
-        typer.echo(f"{printers[printer]['printer-info']}, {printers[printer]['printer-state']}")
+        typer.echo(
+            f"{printers[printer]['printer-info']}, {printers[printer]['printer-state']}"
+        )
 
 
 @app.command()

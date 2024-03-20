@@ -22,7 +22,7 @@ def get_printer(ctx: typer.Context):
         attrs = connection.getPrinterAttributes(printer)
         list_printers.append(attrs)
 
-    output['printers'] = list_printers
+    output["printers"] = list_printers
 
     return output
 
