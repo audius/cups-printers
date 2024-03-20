@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "cups-printers"
+version = "1.0.0"
+description = "Tool to get the printers from a running CUPS instance"
+authors = ["Fabian Affolter <fabian.affolter@audius.de>"]
+readme = "README.md"
+license="MIT"
+keywords = ["printers", "cups"]
+homepage = "https://github.com/audiusGmbH/audiness"
+repository = "https://github.com/audiusGmbH/audiness"
+#classifiers=[
+#    "Development Status :: 3 - Alpha"
+#    "Environment :: Console"
+#    "Intended Audience :: Developers"
+#    "License :: OSI Approved :: MIT License"
+#    "Operating System :: MacOS :: MacOS X"
+#    "Operating System :: Microsoft :: Windows"
+#    "Operating System :: POSIX"
+#    "Topic :: Utilities"
+#]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pycups = "^2.0.1"
+typer = {version = "^0.9.0", extras = ["all"]}
+validators = "^0.23.2"
+
+[tool.poetry.scripts]
+cups-printers = "cups_printers.main:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
