@@ -3,13 +3,13 @@ import typer
 from typing_extensions import Annotated
 from validators import url
 import cups
-from cups_printers.commands import output, state
+from cups_printers.commands import output, state, queue
 from cups_printers.constants import DEFAULT_SERVER, DEFAULT_TIMEOUT
 
 app = typer.Typer()
 
 app.add_typer(output.app, name="output")
-#app.add_typer(queue.app, name="queue")
+app.add_typer(queue.app, name="queue")
 app.add_typer(state.app, name="state")
 
 
