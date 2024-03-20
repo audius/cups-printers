@@ -1,4 +1,4 @@
-# cups_printer
+# cups-printer
 
 Retrieve all printers from a CUPS server. It's a simple command-line tool that
 allows one to output the existing printers or write them to a file.
@@ -11,10 +11,10 @@ It may require that the development package for CUPS is installed, e.g.
 ### PyPI
 
 The package is hosted on [PyPI](https://pypi.org/project/cups_printers/).
-It depends on `click` and `pycups`.
+It depends on `typer` and `pycups`.
 
 ```bash
-$ pip3 install cups_printer
+$ pip install cups_printer
 ```
 
 ### Manual setup
@@ -30,29 +30,31 @@ $ python3 setup.py
 The default CUPS instance which is used is `localhost`.
 
 ```bash
-$ cups_printers --help
-Usage: cups_printers [OPTIONS] COMMAND [ARGS]...
+$ cups-printers --help
 
-  A command line interface for CUPS printers.
-
-Options:
-  --version          Show the version and exit.
-  -s, --server TEXT  The server URL of CUPS instance.  [default:
-                     localhost:631]
-  --timeout INTEGER  Timeout for network operations.
-  --help             Show this message and exit.
-
-Commands:
-  output  Output the retrieved data from a CUPS instance.
-  state   Print the current state of all printers.
+                                                                                                                           
+ Usage: cups-printers [OPTIONS] COMMAND [ARGS]...                                                                          
+                                                                                                                           
+╭─ Options ───────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --server                    TEXT  The server URL of CUPS instance [env var: CUPS_SERVER] [default: localhost:631]       │
+│ --timeout                   TEXT  Timeout for network operations [env var: TIMEOUT] [default: 5]                        │
+│ --install-completion              Install completion for the current shell.                                             │
+│ --show-completion                 Show completion for the current shell, to copy it or customize the installation.      │
+│ --help                            Show this message and exit.                                                           │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ──────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ output                                                                                                                  │
+│ queue                                                                                                                   │
+│ state                                                                                                                   │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ```
 
 To get the details from a remote CUPS instance, use `--server`.
 
 ```bash
-$ cups_printers --server 192.168.191.1:631 output json
+$ cups-printers --server 192.168.191.1:631 output json
 ```
 
 ## License
 
-`cups_printers` ìs license under MIT.
+`cups-printers` ìs license under MIT.
