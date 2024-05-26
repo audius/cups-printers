@@ -2,12 +2,29 @@
 
 import typer
 
+from rich.console import Console
+from rich.table import Table
+
 app = typer.Typer()
 
 
 @app.command()
 def query(ctx: typer.Context):
-    """Display the queues."""
+    """Display the queue."""
     connection = ctx.obj.get("connection")
 
-    typer.echo(f"Not implemented, sorry.")
+    jobs = connection.getJobs(
+        which_jobs="all",
+        requested_attributes=["job-id", "job-name", "job-state", "job-printer-name"],
+    )
+
+    table = Table(title="Queue")
+
+    table.add_column("Job", justify="left", style="cyan", no_wrap=True)
+    table.add_column("State")
+
+    for job, state in jobs.items():
+        table.add_row(str(job), str(state["job-state"]))
+
+    console = Console()
+    console.print(table)
