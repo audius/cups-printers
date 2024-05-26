@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0 - tdb
+
+- Allow to query the queue
+
 ## 1.0.0 - 2024-03-20
 
 - Migrate to typer
