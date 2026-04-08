@@ -22,6 +22,7 @@ repository = "https://github.com/audius/cups-printers"
 [tool.poetry.dependencies]
 python = "^3.13"
 pycups = "^2.0.1"
+rich = "^13.0.0"
 typer = "^0.24"
 validators = "^0.35"
 
