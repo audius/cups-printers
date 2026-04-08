@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cups-printers"
-version = "1.0.0"
+version = "1.1.0"
 description = "Tool to get the printers from a running CUPS instance"
 authors = ["Fabian Affolter <fabian.affolter@audius.de>"]
 readme = "README.md"
