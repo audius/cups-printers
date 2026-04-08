@@ -1,8 +1,9 @@
 # Changelog
 
-## 1.1.0 - tdb
+## 1.1.0 - 2026-04-08
 
 - Allow to query the queue
+- Update dependencies
 
 ## 1.0.0 - 2024-03-20
 
